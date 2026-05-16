@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+     AviumUI for OnePlus 13 (dodge) - Local Manifest
+     
+     Usage:
+       1. repo init -u https://github.com/AviumUI/android_manifests -b avium-16.2
+       2. Copy this file to .repo/local_manifests/dodge.xml
+       3. repo sync
+       
+     This adds device-specific repositories on top of the AviumUI base.
+-->
+<manifest>
+  <!-- Device-specific remotes -->
+  <remote name="osm"
+          fetch="https://github.com/osm1019"
+          sync-c="true"
+          sync-j="4" />
+  
+  <remote name="spiral"
+          fetch="https://github.com/spiral009"
+          sync-c="true"
+          sync-j="4" />
+
+  <!-- Device trees -->
+  <project path="device/oneplus/dodge"
+           name="device_oneplus_dodge"
+           remote="spiral"
+           revision="AviumUI16.2-clean" />
+
+  <project path="device/oneplus/sm8750-common"
+           name="device_oneplus_sm8750-common"
+           remote="spiral"
+           revision="AviumUI16.2-clean" />
+
+  <!-- Vendor blobs -->
+  <project path="vendor/oneplus/dodge"
+           name="proprietary_vendor_oneplus_dodge"
+           remote="spiral"
+           revision="AviumUI16.2-clean"
+           clone-depth="1" />
+
+  <project path="vendor/oneplus/sm8750-common"
+           name="proprietary_vendor_oneplus_sm8750-common"
+           remote="spiral"
+           revision="AviumUI16.2-clean"
+           clone-depth="1" />
+
+  <!-- Kernel -->
+  <project path="kernel/oneplus/sm8750"
+           name="kernel_oneplus_sm8750"
+           remote="spiral"
+           revision="UwU"
+           clone-depth="1" />
+
+  <!-- Hardware -->
+  <project path="hardware/oplus"
+           name="android_hardware_los_oplus"
+           remote="spiral"
+           revision="AviumUI16.2-clean" />
+</manifest>
